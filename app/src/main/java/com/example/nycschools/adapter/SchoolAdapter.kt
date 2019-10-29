@@ -7,6 +7,7 @@ import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
 import com.example.nycschools.R
 import com.example.nycschools.model.SchoolList
+import javax.inject.Inject
 
 class SchoolAdapter (private val schools: List<SchoolList>) : RecyclerView.Adapter<SchoolAdapter.CustomViewHolder>(){
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): CustomViewHolder {

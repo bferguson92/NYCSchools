@@ -1,6 +1,5 @@
 package com.example.nycschools.presenter
 
-import com.example.nycschools.model.School
 import com.example.nycschools.model.SchoolList
 
 interface SchoolContract {
@@ -8,7 +7,8 @@ interface SchoolContract {
         fun getSchools()
     }
 
-    interface View {
+
+    interface View  {
         fun displaySchools(schools: List<SchoolList>)
     }
 }
