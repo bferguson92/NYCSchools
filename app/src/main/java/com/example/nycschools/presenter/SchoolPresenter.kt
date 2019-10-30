@@ -5,8 +5,9 @@ import com.example.nycschools.model.SchoolList
 import retrofit2.Call
 import retrofit2.Callback
 import retrofit2.Response
+import javax.inject.Inject
 
-class SchoolPresenter(private val view: SchoolContract.View) : SchoolContract.Presenter {
+class SchoolPresenter (private val view: SchoolContract.View) : SchoolContract.Presenter {
 
     private val schoolFactory = SchoolFactory()
 
@@ -24,8 +25,6 @@ class SchoolPresenter(private val view: SchoolContract.View) : SchoolContract.Pr
                     view.displaySchools(schools)
                 }
             }
-
-
         })
     }
 }

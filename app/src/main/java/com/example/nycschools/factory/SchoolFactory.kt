@@ -2,10 +2,13 @@ package com.example.nycschools.factory
 
 import com.example.nycschools.model.SchoolList
 import com.example.nycschools.util.Constants
+import dagger.Module
+import dagger.Provides
 import retrofit2.Call
 import retrofit2.Retrofit
 import retrofit2.converter.gson.GsonConverterFactory
 import javax.inject.Inject
+
 
 class SchoolFactory {
 
@@ -15,6 +18,7 @@ class SchoolFactory {
     init {
         schoolService = createSchoolService(getRetrofitInstance())
     }
+
 
     private fun getRetrofitInstance(): Retrofit{
         //Inject using Dagger

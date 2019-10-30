@@ -7,7 +7,8 @@ interface SchoolContract {
         fun getSchools()
     }
 
-    interface View {
+
+    interface View  {
         fun displaySchools(schools: List<SchoolList>)
     }
 }
