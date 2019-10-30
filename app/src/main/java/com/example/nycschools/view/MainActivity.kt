@@ -18,7 +18,6 @@ class MainActivity : AppCompatActivity(), SchoolContract.View {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
         schoolPresenter.getSchools()
-
     }
 
     override fun displaySchools(schools: List<SchoolList>) {

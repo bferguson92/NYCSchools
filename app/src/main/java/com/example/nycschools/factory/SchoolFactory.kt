@@ -9,6 +9,7 @@ import javax.inject.Inject
 
 class SchoolFactory {
 
+    //Inject this
     private var schoolService: SchoolService
 
     init {
