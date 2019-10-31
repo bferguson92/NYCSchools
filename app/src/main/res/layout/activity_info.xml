@@ -6,8 +6,86 @@
     android:layout_height="match_parent"
     tools:context=".view.InfoActivity">
 
-    <androidx.recyclerview.widget.RecyclerView
+    <TextView
+        android:id="@+id/textview_school"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"/>
+        android:gravity="center"
+        android:textStyle="bold"
+        android:layout_margin="16dp"
+        android:paddingBottom="16dp"
+        android:textSize="16sp"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintBottom_toTopOf="@id/textview_reading_score"
+        tools:text="SCHOOL"/>
+
+    <TextView
+        android:id="@+id/textview_reading_label"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:text="@string/reading"
+        app:layout_constraintHorizontal_weight="0.2"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textview_school"
+        app:layout_constraintEnd_toStartOf="@id/textview_reading_score"/>
+
+    <TextView
+        android:id="@+id/textview_reading_score"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="16dp"
+        app:layout_constraintHorizontal_weight="0.8"
+        app:layout_constraintTop_toBottomOf="@+id/textview_school"
+        app:layout_constraintStart_toEndOf="@+id/textview_reading_label"
+        app:layout_constraintEnd_toEndOf="parent"/>
+
+    <TextView
+        android:id="@+id/textview_math_label"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:text="@string/math"
+        app:layout_constraintHorizontal_weight="0.2"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textview_reading_label"
+        app:layout_constraintEnd_toStartOf="@id/textview_math_score"/>
+
+
+    <TextView
+        android:id="@+id/textview_math_score"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="16dp"
+        app:layout_constraintHorizontal_weight="0.8"
+        app:layout_constraintStart_toEndOf="@+id/textview_math_label"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textview_reading_score"/>
+
+    <TextView
+        android:id="@+id/textview_writing_label"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:text="@string/writing"
+        app:layout_constraintHorizontal_weight="0.2"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textview_math_label"
+        app:layout_constraintEnd_toStartOf="@id/textview_writing_score"/>
+
+
+    <TextView
+        android:id="@+id/textview_writing_score"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="16dp"
+        app:layout_constraintHorizontal_weight="0.8"
+        app:layout_constraintStart_toEndOf="@+id/textview_writing_label"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textview_math_score"/>
+
+
+
 
 </androidx.constraintlayout.widget.ConstraintLayout>

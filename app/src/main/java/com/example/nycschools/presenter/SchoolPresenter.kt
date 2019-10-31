@@ -1,25 +1,33 @@
 package com.example.nycschools.presenter
 
+import com.example.nycschools.SchoolApplication
 import com.example.nycschools.factory.SchoolFactory
-import com.example.nycschools.model.SchoolList
+import com.example.nycschools.model.SchoolResponse
+import com.example.nycschools.model.ScoreResponse
+import com.example.nycschools.util.ApplicationData
 import retrofit2.Call
 import retrofit2.Callback
 import retrofit2.Response
 import javax.inject.Inject
 
-class SchoolPresenter (private val view: SchoolContract.View) : SchoolContract.Presenter {
+class SchoolPresenter @Inject constructor(private val view: SchoolContract.View) : SchoolContract.Presenter {
 
-    private val schoolFactory = SchoolFactory()
+    @Inject
+    lateinit var schoolFactory: SchoolFactory
+
+    init {
+        ApplicationData.daggerSchoolComponent?.inject(this)
+    }
 
     override fun getSchools(){
-        schoolFactory.getSchools().enqueue(object : Callback<List<SchoolList>> {
-            override fun onFailure(call: Call<List<SchoolList>>, t: Throwable) {
+        schoolFactory.getScores().enqueue(object : Callback<List<ScoreResponse>> {
+            override fun onFailure(call: Call<List<ScoreResponse>>, t: Throwable) {
 
             }
 
             override fun onResponse(
-                call: Call<List<SchoolList>>,
-                response: Response<List<SchoolList>>
+                call: Call<List<ScoreResponse>>,
+                response: Response<List<ScoreResponse>>
             ) {
                 response.body()?.let {schools->
                     view.displaySchools(schools)

@@ -4,7 +4,7 @@ package com.example.nycschools.model;
 import com.google.gson.annotations.Expose;
 import com.google.gson.annotations.SerializedName;
 
-public class SchoolList {
+public class SchoolResponse {
 
     @SerializedName("dbn")
     @Expose

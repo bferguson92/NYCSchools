@@ -1,13 +1,11 @@
 package com.example.nycschools.factory
 
-import com.example.nycschools.model.SchoolList
+import com.example.nycschools.model.SchoolResponse
+import com.example.nycschools.model.ScoreResponse
 import com.example.nycschools.util.Constants
-import dagger.Module
-import dagger.Provides
 import retrofit2.Call
 import retrofit2.Retrofit
 import retrofit2.converter.gson.GsonConverterFactory
-import javax.inject.Inject
 
 
 class SchoolFactory {
@@ -32,7 +30,11 @@ class SchoolFactory {
         return retrofit.create(SchoolService::class.java)
     }
 
-     fun getSchools() : Call<List<SchoolList>> {
+     fun getSchools() : Call<List<SchoolResponse>> {
         return  schoolService.getSchoolRepos()
+    }
+
+    fun getScores() : Call<List<ScoreResponse>> {
+        return schoolService.getScores()
     }
 }
